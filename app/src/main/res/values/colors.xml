@@ -11,4 +11,7 @@
     <color name="secondaryDarkColor">#00b248</color>
     <color name="primaryTextColor">#000000</color>
     <color name="secondaryTextColor">#000000</color>
+
+    <color name="trans_success">#12D85F</color>
+    <color name="trans_fail">#C3000D</color>
 </resources>

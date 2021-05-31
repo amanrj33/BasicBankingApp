@@ -32,10 +32,18 @@ class TransactionAdapter(private val context: Context, private val list: ArrayLi
         val currentTransaction = userArrayList[itemCount - 1 - position]
 
         holder.apply {
-            from.text = currentTransaction.fromUser
-            to.text = currentTransaction.toUser
-            amount.text = currentTransaction.amountTransferred.toString()
-            status.text = currentTransaction.status.toString()
+            from.text = context.getString(R.string.from_format, currentTransaction.fromUser)
+            amount.text = context.getString(R.string.amount_format, currentTransaction.amountTransferred)
+
+            if (currentTransaction.status == 0) {
+                status.text = context.getString(R.string.failure)
+                status.setTextColor(context.getColor(R.color.trans_fail))
+                to.text = " - "
+            }else {
+                status.text = context.getString(R.string.success)
+                status.setTextColor(context.getColor(R.color.trans_success))
+                to.text = context.getString(R.string.to_format, currentTransaction.toUser)
+            }
         }
 
     }

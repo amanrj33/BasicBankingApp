@@ -10,4 +10,12 @@
     <string name="transfer_money">Transfer Money</string>
     <string name="all_users">ALL USERS</string>
     <string name="select_recipient">SELECT THE RECIPIENT</string>
+
+    <string name="from_format">From:  %s</string>
+    <string name="to_format">To:  %s</string>
+    <string name="amount_format">₹ %d</string>
+
+    <string name="failure">Failed</string>
+    <string name="success">Success</string>
+    <string name="transactions">Transactions</string>
 </resources>

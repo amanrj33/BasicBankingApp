@@ -3,21 +3,24 @@ package com.android.example.projectsparks
 import android.database.Cursor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.example.projectsparks.adapter.TransactionAdapter
 import com.android.example.projectsparks.database.TransactionContract
 import com.android.example.projectsparks.database.TransactionHelper
-import com.android.example.projectsparks.database.UserContract
-import com.android.example.projectsparks.database.UserHelper
 import com.android.example.projectsparks.helper.Transaction
-import com.android.example.projectsparks.helper.User
 
 class TransactionActivity : AppCompatActivity() {
     lateinit var userRecyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_transaction)
+
+        val imageView: ImageView = findViewById(R.id.backButton)
+        imageView.setOnClickListener {
+            onBackPressed()
+        }
 
         userRecyclerView = findViewById(R.id.transactionRV)
         userRecyclerView.layoutManager = LinearLayoutManager(this)
