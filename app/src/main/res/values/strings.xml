@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Project Sparks</string>
+    <string name="basic_banking_app">BASIC BANKING APP</string>
+    <string name="name">Name</string>
+    <string name="account_number">Account Number</string>
+    <string name="email">Email</string>
+    <string name="ifsc_code">IFSC Code</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="current_balance">Current Balance</string>
+    <string name="transfer_money">Transfer Money</string>
+    <string name="all_users">ALL USERS</string>
+    <string name="select_recipient">SELECT THE RECIPIENT</string>
+</resources>
