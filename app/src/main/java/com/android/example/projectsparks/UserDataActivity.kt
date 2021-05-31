@@ -68,6 +68,7 @@ class UserDataActivity : AppCompatActivity() {
                     intent.putExtra("isTransfer", true)
                     intent.putExtra("FROM_USER_ACCOUNT_NO", accountNo)
                     intent.putExtra("FROM_USER_ACCOUNT_NAME", accountName)
+                    intent.putExtra("FROM_USER_ACCOUNT_BALANCE", currentBalance)
                     intent.putExtra("TRANSFER_AMOUNT", transferEditText.text.toString())
                     startActivity(intent)
                     finish()

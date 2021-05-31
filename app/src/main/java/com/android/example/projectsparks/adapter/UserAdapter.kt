@@ -17,10 +17,14 @@ import com.android.example.projectsparks.database.UserHelper
 import com.android.example.projectsparks.helper.User
 import java.util.*
 
-class UserAdapter(private val context: Context, list: ArrayList<User>, private val isTransferringMoney: Boolean, private val from: String?, private val amount: String?) :
-    RecyclerView.Adapter<UserAdapter.ViewHolder>() {
+class UserAdapter(
+    private val context: Context,
+    list: ArrayList<User>,
+    private val isTransferringMoney: Boolean,
+    private val transferDoneListener: TransferDoneClickListener) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
     private val userArrayList: ArrayList<User> = list
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var userName: TextView = itemView.findViewById(R.id.userName)
         var userAccountBalance: TextView = itemView.findViewById(R.id.balance)
@@ -39,23 +43,9 @@ class UserAdapter(private val context: Context, list: ArrayList<User>, private v
 
         viewHolder.itemView.setOnClickListener {
 
-            if (isTransferringMoney){
-
-                val fromName = from.toString()
-                val toName = currentUser.name
-                val transAmt = amount.toString()
-
-                val isSuccess = TransactionHelper(context).insertTransferData(fromName, toName, transAmt, 1)
-                if (isSuccess) {
-                    Toast.makeText(context, "Transaction Successful", Toast.LENGTH_LONG).show()
-//                    val transferAmount: Int = amount!!.toInt()
-//                    val deductAmount =
-//                    val increaseAmount: Int = currentUser.balance + transferAmount
-//                    UserHelper(context).updateAmount(fromName.toInt() , deductAmount)
-//                    UserHelper(context).updateAmount(toName.toInt() , increaseAmount)
-                }
-
-            } else {
+            if (isTransferringMoney)
+                transferDoneListener.onDoneTransfer(currentUser)
+            else {
 
                 val intent = Intent(context, UserDataActivity::class.java)
                 intent.putExtra("ACCOUNT_NO", currentUser.accountNumber)
@@ -70,7 +60,11 @@ class UserAdapter(private val context: Context, list: ArrayList<User>, private v
     }
 
     override fun getItemCount(): Int {
-       return userArrayList.size
+        return userArrayList.size
+    }
+
+    interface TransferDoneClickListener {
+        fun onDoneTransfer(user: User)
     }
 
 }

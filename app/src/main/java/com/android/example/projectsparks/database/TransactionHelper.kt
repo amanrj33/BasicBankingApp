@@ -31,7 +31,7 @@ class TransactionHelper(context: Context?) :
     fun insertTransferData(
         fromName: String,
         toName: String,
-        amount: String,
+        amount: Int,
         status: Int
     ): Boolean {
         val db = this.writableDatabase
