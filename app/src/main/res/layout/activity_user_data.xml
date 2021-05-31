@@ -106,8 +106,12 @@
     <Button
         android:id="@+id/transfer_money"
         android:layout_width="0dp"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:layout_margin="24dp"
         android:layout_height="wrap_content"
         android:text="@string/transfer_money"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

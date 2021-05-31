@@ -23,7 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/all_users"
+        android:textColor="@color/black"
         android:textSize="32sp"
+        android:padding="12dp"
+        android:fontFamily="@font/bree_serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,9 +35,11 @@
         android:id="@+id/transactionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="16dp"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_bank" />
+        app:tint="@color/white"
+        android:backgroundTint="@color/secondaryDarkColor"
+        app:srcCompat="@drawable/ic_transaction" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@ import com.android.example.projectsparks.helper.Transaction
 import com.android.example.projectsparks.helper.User
 import java.util.ArrayList
 
-class TransactionAdapter(private val context: Context, list: ArrayList<Transaction>): RecyclerView.Adapter<TransactionAdapter.ViewHolder>() {
+class TransactionAdapter(private val context: Context, private val list: ArrayList<Transaction>): RecyclerView.Adapter<TransactionAdapter.ViewHolder>() {
 
     private val userArrayList: ArrayList<Transaction> = list
 
@@ -29,7 +29,7 @@ class TransactionAdapter(private val context: Context, list: ArrayList<Transacti
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentTransaction = userArrayList[position]
+        val currentTransaction = userArrayList[itemCount - 1 - position]
 
         holder.apply {
             from.text = currentTransaction.fromUser
