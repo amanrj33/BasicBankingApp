@@ -4,116 +4,166 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
     tools:context=".UserDataActivity">
-
-    <TextView
-        android:id="@+id/name"
+    <ImageView
+        android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/name"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:rotation="90"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back_arrow"
+        app:tint="@color/primaryDarkColor" />
 
-    <TextView
-        android:id="@+id/name_text"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Aman"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/accountNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/account_number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25">
 
-    <TextView
-        android:id="@+id/account_no_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="1001"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_text" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp">
 
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/email"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/accountNo" />
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                app:tint="@color/primaryDarkColor"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_customer" />
 
-    <TextView
-        android:id="@+id/email_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="aman@gmail.com"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account_no_text" />
+            <TextView
+                android:id="@+id/name"
+                style="@style/StaticText"
+                android:text="@string/name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
-    <TextView
-        android:id="@+id/ifscCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ifsc_code"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+            <TextView
+                android:id="@+id/name_text"
+                style="@style/StaticText.User"
+                app:layout_constraintBottom_toBottomOf="@+id/name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/name"
+                tools:text="Aman" />
 
-    <TextView
-        android:id="@+id/ifsc_code_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="SBI0000123"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_text" />
+            <TextView
+                android:id="@+id/accountNo"
+                style="@style/StaticText"
+                android:text="@string/account_number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
 
-    <TextView
-        android:id="@+id/mobileNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mobile_number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ifscCode" />
+            <TextView
+                android:id="@+id/account_no_text"
+                style="@style/StaticText.User"
+                app:layout_constraintBottom_toBottomOf="@+id/accountNo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/accountNo"
+                tools:text="1001" />
 
-    <TextView
-        android:id="@+id/mobile_no_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="9876543210"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ifsc_code_text" />
+            <TextView
+                android:id="@+id/email"
+                style="@style/StaticText"
+                android:text="@string/email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/accountNo" />
 
-    <TextView
-        android:id="@+id/currentBalance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/current_balance"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mobileNo" />
+            <TextView
+                android:id="@+id/email_text"
+                style="@style/StaticText.User"
+                app:layout_constraintBottom_toBottomOf="@+id/email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/email"
+                tools:text="aman@gmail.com" />
 
-    <TextView
-        android:id="@+id/current_balance_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="₹ 51300"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mobile_no_text" />
+            <TextView
+                android:id="@+id/ifscCode"
+                style="@style/StaticText"
+                android:text="@string/ifsc_code"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email" />
+
+            <TextView
+                android:id="@+id/ifsc_code_text"
+                style="@style/StaticText.User"
+                app:layout_constraintBottom_toBottomOf="@+id/ifscCode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ifscCode"
+                tools:text="SBI0000123" />
+
+            <TextView
+                android:id="@+id/mobileNo"
+                style="@style/StaticText"
+                android:text="@string/mobile_number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ifscCode" />
+
+            <TextView
+                android:id="@+id/mobile_no_text"
+                style="@style/StaticText.User"
+                app:layout_constraintBottom_toBottomOf="@+id/mobileNo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/mobileNo"
+                tools:text="9876543210" />
+
+            <TextView
+                android:id="@+id/currentBalance"
+                style="@style/StaticText"
+                android:text="@string/current_balance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mobileNo" />
+
+            <TextView
+                android:id="@+id/current_balance_text"
+                style="@style/StaticText.User"
+                app:layout_constraintBottom_toBottomOf="@+id/currentBalance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/currentBalance"
+                tools:text="₹ 51300" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/transfer_money"
         android:layout_width="0dp"
-        android:padding="12dp"
-        android:textSize="18sp"
-        android:layout_margin="24dp"
         android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:padding="8dp"
         android:text="@string/transfer_money"
         android:textColor="@color/white"
+        android:backgroundTint="@color/primaryDarkColor"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentBalance" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <ImageView
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        app:tint="@color/primaryDarkColor"
+        android:background="@drawable/circle_amount"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
+        app:srcCompat="@drawable/ic_customer" />
 </androidx.constraintlayout.widget.ConstraintLayout>

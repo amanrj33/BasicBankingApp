@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,11 @@ class UserDataActivity : AppCompatActivity() {
         val mobileNo: TextView = findViewById(R.id.mobile_no_text)
         val transferMoney: Button = findViewById(R.id.transfer_money)
 
+        val imageView: ImageView = findViewById(R.id.backButton)
+        imageView.setOnClickListener {
+            onBackPressed()
+        }
+
         //getting data from intent and displaying it
         val extras: Bundle = intent.extras!!
         name.text = extras.getString("NAME")
@@ -32,7 +38,7 @@ class UserDataActivity : AppCompatActivity() {
         email.text = extras.getString("EMAIL")
         mobileNo.text = extras.getString("PHONE_NO")
         ifscCode.text = extras.getString("IFSC_CODE")
-        balance.text = extras.getString("BALANCE")
+        balance.text = getString(R.string.amount_format, extras.getString("BALANCE").toString().toInt())
 
         //listener on button
         transferMoney.setOnClickListener {
