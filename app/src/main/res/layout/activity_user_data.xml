@@ -161,6 +161,7 @@
         android:layout_height="84dp"
         app:tint="@color/primaryDarkColor"
         android:background="@drawable/circle_amount"
+        android:backgroundTint="@color/primaryColor"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

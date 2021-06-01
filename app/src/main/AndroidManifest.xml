@@ -4,12 +4,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_banking_transaction"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectSparks">
-        <activity android:name=".TransactionActivity"></activity>
+        <activity android:name=".TransactionActivity"/>
         <activity android:name=".UserDataActivity" />
         <activity android:name=".UserListActivity" />
         <activity android:name=".MainScreenActivity">
