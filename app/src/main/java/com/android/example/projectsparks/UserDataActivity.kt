@@ -38,11 +38,12 @@ class UserDataActivity : AppCompatActivity() {
         email.text = extras.getString("EMAIL")
         mobileNo.text = extras.getString("PHONE_NO")
         ifscCode.text = extras.getString("IFSC_CODE")
-        balance.text = getString(R.string.amount_format, extras.getString("BALANCE").toString().toInt())
+        val balanceAccount = extras.getString("BALANCE").toString()
+        balance.text = getString(R.string.amount_format, balanceAccount.toInt())
 
         //listener on button
         transferMoney.setOnClickListener {
-            enterAmount(balance.text.toString(), accountNo.text.toString(), name.text.toString())
+            enterAmount(balanceAccount, accountNo.text.toString(), name.text.toString())
         }
     }
 
